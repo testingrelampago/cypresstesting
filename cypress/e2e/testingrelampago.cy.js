@@ -13,12 +13,12 @@ describe('Pruebas de funcionalidades en testingrelampago.com', () => {
 
   // Caso de prueba 3: Verificar la interacción con un formulario
   it('Envía un formulario de contacto', () => {
-    cy.visit('https://testingrelampago.com/contacto')
-    cy.get('input[name="nombre"]').type('Ejemplo')
-    cy.get('input[name="email"]').type('ejemplo@example.com')
-    cy.get('textarea[name="mensaje"]').type('Este es un mensaje de prueba')
+    cy.visit('https://testingrelampago.com/contact-us')
+    cy.get('input[data-aid="CONTACT_FORM_NAME"]').type('Ejemplo')
+    cy.get('input[data-aid="E-mail"]').type('ejemplo@example.com')
+    cy.get('textarea[placeholder="Message*"]').type('Este es un mensaje de prueba')
     cy.get('button[type="submit"]').click()
-    cy.contains('¡Mensaje enviado con éxito!').should('exist')
+    cy.contains('Gracias por tu consulta. Nos comunicaremos contigo en un plazo de 48 horas.').should('exist')
   })
 
   // Caso de prueba 4: Verificar la navegación a través de enlaces
